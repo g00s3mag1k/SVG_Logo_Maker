@@ -1,8 +1,15 @@
 const inquirer = require("inquirer");
-
 const fs = require("fs");
+const { Circle, Square, Triangle } = require('./lib/shapes');
 
-const {} = require ('');
+class SVG {
+    constructor() {
+        this.textVar = '';
+        this.shapeVar = '';
+    } render() {
+        return
+    }
+}
 
 function promptInput () {
     inquirer.prompt([
@@ -27,7 +34,23 @@ function promptInput () {
             message: 'What shape would you like your logo?',
         },
     ])
+.then((data) => {
+    if (data.text.length > 3) {
+        console.log('Must enter only three characters');
+    } else {
+        writeToFile('logo.svg', data);
+    }
+});
 }
-.then() => {
-    
-}
+
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
+        if (err) {
+            return console.log(err);
+        }
+        console.log('SVG logo has been created!');
+    });
+};
+
+promptInput();
+//calling function to execute inquirer prompts in command line application
