@@ -1,13 +1,19 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const { Circle, Square, Triangle } = require('./lib/shapes');
+const { Circle, Square, Triangle } = require('./lib/shapes.js');
 
 class SVG {
     constructor() {
-        this.textVar = '';
-        this.shapeVar = '';
+        this.textVar = ''
+        this.shapeVar = ''
     } render() {
-        return
+        return ``
+    }
+    setText(text,color) {
+        this.textVar = `<text x='150' y='125' font-size='60' text-anchor='middle' fill=${color}>${text}</text>`
+    }
+    setShape(shape) {
+        this.shapeVar = shape.render()
     }
 }
 
@@ -54,3 +60,5 @@ function writeToFile(fileName, data) {
 
 promptInput();
 //calling function to execute inquirer prompts in command line application
+
+module.exports = SVG
