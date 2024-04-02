@@ -1,1 +1,1 @@
-<svg width="300" height="250" style="background-color: orange"><rect x="69" y="52" width="150" height="170" fill="undefined"/><text x='150' y='125' font-size='60' text-anchor='middle' fill='yellow'>bag</text></svg>
+<svg width="300" height="250" style="background-color: white"><polygon points="140, 25 240, 190 50, 190" fill="black"/><text x='145' y='125' font-size='50' text-anchor='middle' fill='red'>bag</text></svg>
