@@ -1,1 +1,1 @@
-<svg width="300" height="250" style="background-color: white"><rect x="70" y="43" width="150" height="150" fill="blue"/><text x='145' y='125' font-size='50' text-anchor='middle' fill='green'>bag</text></svg>
+<svg width="300" height="250" style="background-color: white"><circle cx="146" cy="120" r="70" fill="purple"/><text x='145' y='125' font-size='50' text-anchor='middle' fill='blue'>bag</text></svg>
