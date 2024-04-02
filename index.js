@@ -10,12 +10,12 @@ class SVG {
     }
 
     render() {
-        const svgContent = `<svg width="300" height="250" style="background-color: ${this.backgroundColor}">${this.shapeVar}${this.textVar}</svg>`;
+        const svgContent = `<svg width="300" height="250" style="background-color: white">${this.shapeVar}${this.textVar}</svg>`;
         return svgContent;
     }
 
     setText(text, color) {
-        this.textVar = `<text x='150' y='125' font-size='60' text-anchor='middle' fill='${color}'>${text}</text>`;
+        this.textVar = `<text x='145' y='125' font-size='50' text-anchor='middle' fill='${color}'>${text}</text>`;
     }
 
     setShape(shape) {
@@ -64,24 +64,24 @@ function Init() {
 
         switch(data.shape) {
             case 'Circle':
-                svg.setShape(new Circle());
+                svg.setShape(new Circle(data.color));
                 break;
             case 'Square':
-                svg.setShape(new Square());
+                svg.setShape(new Square(data.color));
                 break;
             case 'Triangle':
-                svg.setShape(new Triangle());
+                svg.setShape(new Triangle(data.color));
                 break;
             default:
                 console.log('Invalid shape selected');
         }
 
-        writeToFile('logo.svg', data, svg.render());
+        writeToFile('logo.svg', svg.render());
     });
 }
 
-function writeToFile(fileName, data, svgContent) {
-    fs.writeFile(fileName, svgContent, data, function(err) {
+function writeToFile(fileName, svgContent) {
+    fs.writeFile(fileName, svgContent, function(err) {
         if (err) {
             console.log(err);
         } else {
